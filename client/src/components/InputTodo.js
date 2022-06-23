@@ -26,7 +26,7 @@ function InputTodo() {
     <form className="d-flex " onSubmit={onSubmitForm}>
       <div className="mb-3 input-group w-50 mx-auto">
         <input type="text"
-          className="form-control" name="" id="" aria-describedby="helpId" placeholder="Add new To Do" onChange={e => setDescription(e.target.value)} />
+          className="form-control" name="" id="" aria-describedby="helpId" placeholder="Add new to do" onChange={e => setDescription(e.target.value)} />
         <button className="input-group-text btn btn-success">
           <i className="bi bi-plus" style={{width: "50px", height: "50px"}}></i>
         </button>
