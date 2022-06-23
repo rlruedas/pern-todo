@@ -9,7 +9,7 @@ function ListTodo() {
             const data = await response.json();
 
             setJsonData(data);
-
+            
         } catch (error) {
             console.log(error)
         }
@@ -18,10 +18,10 @@ function ListTodo() {
     const deleteToDo = async(id) => {
         console.log(id)
         try {
-            const deleteToDo = await fetch(`http://localhost:5000/todos/${id}`, {
+            await fetch(`http://localhost:5000/todos/${id}`, {
                 method: "DELETE"
             })
-            console.log(deleteToDo)
+            
         } catch (error) {
             console.log(error)
         }
@@ -44,7 +44,7 @@ function ListTodo() {
                             </td>
                             <td className='text-center' style={{ width: '100%', margin: 'auto', fontSize: '20px' }}>{items.description}</td>
                             <td >
-                                <button type="button" className="btn btn-danger" onClick={() => {deleteToDo(items.id); getData();}}><i className="bi bi-trash2-fill"></i></button>
+                                <button type="button" className="btn btn-danger" onClick={() => {deleteToDo(items.id); window.location.reload(true);}}><i className="bi bi-trash2-fill"></i></button>
                             </td>
                         </tr>
                     ))
